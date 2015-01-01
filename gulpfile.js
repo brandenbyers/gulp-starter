@@ -20,7 +20,8 @@ gulp.task('browser-sync', function () {
 	browserSync({
 		server: {
 			baseDir: dist + '/'
-		}
+		},
+		notify: false
 	});
 });
 
@@ -41,7 +42,7 @@ gulp.task('sass', function () {
 
 gulp.task('html', function () {
 	gulp.src(paths.html)
-//	.pipe(minifyHTML())
+	.pipe(minifyHTML())
 	.pipe(gulp.dest(dist + '/'));
 });
 
